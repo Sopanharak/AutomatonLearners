@@ -39,17 +39,16 @@ if isNFA:
     print(newD)
     print(newE)
 
-
-    # still doing it
-    # num = input("Enter 1 to test / O to quit")
-    # while(num != 0):
-    #     FA = nfa.NFA(newA, newB, newC, newD, newE)
-    #     FA.run()
-    #     if(FA == True):
-    #         print("FA accept this string.")
-    #     else:
-    #         print("FA does not accept this string.")
-    #     num = input("Enter 1 to test / O to quit")
+    num = input("Enter 1 to test / O to quit")
+    while(num != 0):
+        FA = nfa.NFA(newA, newB, newC, newD, newE)
+        userString = input("Enter String: ")
+        aceptString = FA.run(userString)
+        if(aceptString == True):
+            print("FA accept this string.")
+        else:
+            print("FA does not accept this string.")
+        num = input("Enter 1 to test / O to quit")
     
 else:
     newA = [int(i) for i in a.split(",")]
